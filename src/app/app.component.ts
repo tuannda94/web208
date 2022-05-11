@@ -30,4 +30,26 @@ export class AppComponent {
       status: 1
     },
   ];
+
+  teachers = [
+    {
+      id: 1,
+      name: 'tuannda3',
+      age: 27,
+      gender: 1,
+      avatar: 'https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg',
+      status: 1
+    },
+    {
+      id: 2,
+      name: 'tuannda3',
+      age: 27,
+      gender: 0,
+      avatar: 'https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg',
+      status: 0
+    },
+  ];
+
+  studentName = 'TUANNDA222';
+  studentId = 'PH12345678';
 }
