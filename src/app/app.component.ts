@@ -18,11 +18,29 @@ export class AppComponent {
   students = [
     {
       name: 'tuannda1',
-      id: 'PH1111'
+      id: 'PH1111',
+      status: 0
     },
     {
       name: 'tuannda2',
-      id: 'PH2222'
+      id: 'PH2222',
+      status: 1
+    },
+    {
+      name: 'tuannda3',
+      id: 'PH3333',
+      status: 1
     }
   ];
+
+  champs = [
+    {
+      name: 'Lucian',
+      dame: 400,
+      defend: 200,
+      speed: 100,
+      price: 6300,
+      avatar: 'https://oneesports.blob.core.windows.net/cdn-data/sites/4/2021/08/pulsefire-lucian-lien-minh-huyen-thoai1.jpg'
+    }
+  ]
 }
