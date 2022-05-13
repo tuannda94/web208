@@ -8,6 +8,7 @@ import { TableComponent } from './table/table.component';
 import { TableNameComponent } from './table/table-name/table-name.component';
 import { NameComponent } from './name/name.component';
 import { IdentityComponent } from './identity/identity.component';
+import { TableAvatarComponent } from './table/table-avatar/table-avatar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { IdentityComponent } from './identity/identity.component';
     TableComponent,
     TableNameComponent,
     NameComponent,
-    IdentityComponent
+    IdentityComponent,
+    TableAvatarComponent
   ],
   imports: [
     BrowserModule,

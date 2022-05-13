@@ -35,7 +35,7 @@ export class AppComponent {
     {
       id: 1,
       name: 'tuannda3',
-      age: 27,
+      age: 31,
       gender: 1,
       avatar: 'https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg',
       status: 1
@@ -52,4 +52,24 @@ export class AppComponent {
 
   studentName = 'TUANNDA222';
   studentId = 'PH12345678';
+
+  // Định nghĩa hàm khi click vào thẻ h1 ở file html
+  schoolName = '';
+
+  clickH1() {
+    console.log('Da click vao H1');
+    this.schoolName = 'Poly';
+  }
+
+  // Định nghĩa hàm khi click nút ẩn hiện bảng
+  showStatus = true;
+  changeTableStatus() {
+    this.showStatus = !this.showStatus;
+  }
+
+  // Định nghĩa hàm khi thay đổi nội dung input
+  inputValue = 'tuannda3';
+  changeInput(e: any) {
+    this.inputValue = e.target.value;
+  }
 }

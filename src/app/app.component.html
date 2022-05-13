@@ -1,8 +1,24 @@
 <div class="container">
-  <h1>DS Giảng viên</h1>
-
+  <h1 (click)="clickH1()" >DS Giảng viên {{schoolName}}</h1>
   <div>
-    <app-table [users]="teachers"></app-table>
+    <form action="">
+      <input type="text" (keydown)="changeInput($event)" [value]="inputValue">
+      {{inputValue}}
+    </form>
+  </div>
+  <!--
+    Cách 1: sử dụng ngIf
+    Cách 2: sử dụng class
+   -->
+  <div>
+    <button
+      class="btn btn-info"
+      (click)="changeTableStatus()"
+    >{{showStatus ? 'Ẩn' : 'Hiện'}} bảng teacher</button>
+      <app-table [users]="teachers"
+      *ngIf="showStatus"
+      class="{{showStatus ? 'display-block' : 'display-none'}}"
+      ></app-table>
   </div>
 
   <div>
