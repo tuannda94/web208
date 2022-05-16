@@ -1,7 +1,60 @@
 <div class="container">
+  <div>
+    <p>Sự kiện</p>
+    <button class="btn btn-primary" (click)="onClickBtn()">
+      {{showStatus ? 'Ẩn' : 'Hiện'}} bảng dữ liệu
+    </button>
+    <div>
+      <label for="input">Name</label>
+      <input type="text" id="input" (input)="onInput($event, 'name')"
+        [value]="inputValue.name"
+      >
+    </div>
+    <div>
+      <label for="input">Avatar</label>
+      <input type="text" id="input" (input)="onInput($event, 'avatar')"
+        [value]="inputValue.avatar"
+      >
+    </div>
+    <div>
+      <label for="input">Speed</label>
+      <input type="text" id="input" (input)="onInput($event, 'speed')"
+        [value]="inputValue.speed"
+      >
+    </div>
+    <div>
+      <button class="btn btn-success" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+  </div>
+
+<!-- ----------------------- -->
+  <div>
+    Tên SV: <app-name [name]="studentName" ></app-name>
+  </div>
+  <div>
+    MSV: <app-identity [id]="studentId"></app-identity>
+  </div>
+
+
   <h1>Champions LMHT</h1>
 
   <div>
-    <app-table [champions]="champs" ></app-table>
+    <!--
+      B1: kiểm tra selector của component con
+      B2: đưa component con vào component cha <app-table></app-table>
+      B3: kiểm tra xem phần html của component con đã hiển thị chưa
+      B4: truyền dữ liệu tĩnh <app-table a="123" ></app-table>
+      B5: đổi sang truyền dữ liệu động <app-table [champions]="champs" ></app-table>
+     -->
+    <!-- <app-table
+      [champions]="champs"
+      class="{{showStatus ? 'db' : 'dn'}}"
+    ></app-table> -->
+    <app-table
+      [champions]="champs"
+      *ngIf="showStatus"
+    ></app-table>
   </div>
 </div>
