@@ -72,4 +72,43 @@ export class AppComponent {
   changeInput(e: any) {
     this.inputValue = e.target.value;
   }
+
+  // Định nghĩa hàm nhận giá trị từ các input
+  inputValues = {
+    name: '', // đang có ở input
+    age: '', // đang có ở input nhưng là chuỗi
+    avatar: '',
+    gender: '0'
+  };
+  // onInputName(event: any, info: string) {
+  //   this.inputValues['name'] = event.target.value;
+  // }
+
+  // onInputAge(event: any, info: string) {
+  //   this.inputValues.age = event.target.value;
+  // }
+  // key: 'name'|'age' -> key chỉ được là giá trị 'name' hoặc 'age'
+  onInput(event: any, key: 'name'|'age'|'avatar'|'gender') {
+    this.inputValues[key] = event.target.value;
+  }
+  // Sự kiện click vào nút Submit
+  onSubmit() {
+    // Thêm dữ liệu vừa thao tác ở form vào mảng teachers
+    this.teachers.push({
+      ...this.inputValues,
+      age: +this.inputValues.age, //đưa age từ chuỗi input về số
+      // bổ sung các thuộc tính còn đang thiếu
+      gender: +this.inputValues.gender,
+      status: 0,
+      id: this.teachers.length + 1
+    });
+    // Cập nhật lại giá trị cho input ở form:
+    // [value]="this.inputValues.name"
+    this.inputValues = {
+      name: '',
+      age: '',
+      avatar: '',
+      gender: '0'
+    };
+  }
 }

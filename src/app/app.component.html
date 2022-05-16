@@ -6,6 +6,60 @@
       {{inputValue}}
     </form>
   </div>
+  <div>
+    <p>Form đăng ký thông tin giảng viên</p>
+    <form action="">
+      <div class="form-group">
+        <label for="">Tên GV</label>
+        <input
+          type="text"
+          class="form-control"
+          (input)="onInput($event, 'name')"
+          [value]="inputValues.name"
+        >
+      </div>
+      <div class="form-group">
+        <label for="">Tuổi GV</label>
+        <input
+          type="number"
+          class="form-control"
+          (input)="onInput($event, 'age')"
+          [value]="inputValues.age"
+        >
+      </div>
+      <div class="form-group">
+        <label for="">Ảnh GV</label>
+        <input
+          type="text"
+          class="form-control"
+          (input)="onInput($event, 'avatar')"
+          [value]="inputValues.avatar"
+        >
+      </div>
+      <div class="form-group">
+        <label for="">Giới tính GV</label>
+        <input
+          type="radio"
+          class="form-check"
+          (input)="onInput($event, 'gender')"
+          [checked]="inputValues.gender === '1'"
+          [value]="1"
+        >Nam
+        <input
+          type="radio"
+          class="form-check"
+          (input)="onInput($event, 'gender')"
+          [checked]="inputValues.gender === '0'"
+          [value]="0"
+        >Nữ
+      </div>
+      <div>
+        <button type="button" (click)="onSubmit()" class="btn btn-success">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
   <!--
     Cách 1: sử dụng ngIf
     Cách 2: sử dụng class
