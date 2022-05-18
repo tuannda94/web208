@@ -9,6 +9,9 @@ import { TableNameComponent } from './table/table-name/table-name.component';
 import { NameComponent } from './name/name.component';
 import { IdentityComponent } from './identity/identity.component';
 import { TableAvatarComponent } from './table/table-avatar/table-avatar.component';
+import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
+import { ShowValidateComponent } from './components/show-validate/show-validate.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { TableAvatarComponent } from './table/table-avatar/table-avatar.componen
     TableNameComponent,
     NameComponent,
     IdentityComponent,
-    TableAvatarComponent
+    TableAvatarComponent,
+    FormComponent,
+    ShowValidateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule // FormsModule được sử dụng ở các component đã có bên trên
   ],
   providers: [],
   bootstrap: [AppComponent]
