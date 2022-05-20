@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -12,7 +13,51 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(formData: {name: string, age: string}) {
-    console.log(formData);
+  // Trung gian dữ liệu của file ts với form
+  inputValues = {
+    id: 0,
+    name: '',
+    age: 0
+  };
+
+  users = [
+    {
+      id: 1,
+      name: 'tuannda3',
+      age: 30
+    },
+    {
+      id: 10,
+      name: 'tuannda3',
+      age: 30
+    }
+  ];
+
+  onSubmit(userForm: NgForm) {
+    console.log(userForm.value);
+    // console.log(formData);
+    // 0. Tìm id lớn nhất đang có để +1
+    const newUserIds = this.users
+      .map(user => user.id) // lấy ra mảng mới chỉ có id
+      .sort((a: number, b: number) => b - a); // sort các id đang có
+    const maxId = newUserIds[0];
+    // 1. Push dữ liệu mới nhận từ form vào mảng
+    if (userForm.value.id === 0) {
+      this.users.push({
+        ...userForm.value, // lấy ra object value của form
+        id: maxId + 1
+      });
+    } else {
+      //update
+    }
+    // 2. Cập nhật giá trị của form về default
+    userForm.resetForm({
+      name: '',
+      age: 0
+    });
+  }
+
+  onEdit(user: any) {
+    this.inputValues = user;
   }
 }
