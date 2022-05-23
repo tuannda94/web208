@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
 
   inputValues = {
     id: 0,
-    name: '123123123',
+    name: '',
     age: 0,
     email: ''
   };
@@ -47,11 +47,25 @@ export class FormComponent implements OnInit {
       .map(user => user.id)
       .sort((a, b) => a - b); // [1, 10, 15]
     const newId = userIds[userIds.length - 1];
-    // 2. Thêm vào mảng
-    this.users.push({
-      ...userForm.value, // Lấy ra object giá trị của form
-      id: newId + 1
-    });
+
+    // Nếu inputValues có id = 0 thì là thêm mới -> 2.
+    // Nếu inputValues có id != 0 thì là chỉnh sửa -> 2.1
+    if (this.inputValues.id == 0) {
+      // 2. Thêm vào mảng
+      this.users.push({
+        ...userForm.value, // Lấy ra object giá trị của form
+        id: newId + 1
+      });
+    } else {
+      // 2.1 Chỉnh sửa
+      const idx = this.users.findIndex((user) => user.id === this.inputValues.id);
+      if (idx > -1) {
+        this.users[idx] = {
+          ...userForm.value,
+          id: this.inputValues.id
+        };
+      }
+    }
     // 3. Cập nhật lại giá trị ban đầu
     // userForm.resetForm(); // Nếu không truyền gì thì tất cả về null
     userForm.resetForm({
@@ -60,4 +74,19 @@ export class FormComponent implements OnInit {
       email: ''
     });
   }
+
+  onDelete(userId: number) {
+    this.users = this.users.filter((user) => user.id !== userId);
+  }
+
+  onEdit(userId: number) {
+    // 1. Tìm ra user có id là userId truyền vào
+    const editUser = this.users.find((user) => user.id === userId);
+    console.log(editUser);
+    // 2. Nếu tìm ra thì mới gán giá trị lên form
+    if (editUser) {
+      this.inputValues = {...editUser};
+    }
+  }
+
 }
