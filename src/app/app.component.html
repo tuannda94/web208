@@ -1,97 +1,15 @@
 <div class="container">
   <div>
-    <!-- <h1>Angular form</h1> -->
-    <div>
-      <app-user></app-user>
-      <!-- <app-form></app-form> -->
-    </div>
-  </div>
+    <h1>Router</h1>
+    <nav>
+      <ul>
+        <!-- sử dụng routerLink thay vì href -->
+        <!-- <li><a href="/">Home</a></li> -->
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/user">User</a></li>
+      </ul>
+    </nav>
 
-  <hr>
-
-  <h1 (click)="clickH1()" >DS Giảng viên {{schoolName}}</h1>
-  <div>
-    <form action="">
-      <input type="text" (keydown)="changeInput($event)" [value]="inputValue">
-      {{inputValue}}
-    </form>
+    <!-- Đây là nơi component ở routes được render ra -->
+    <router-outlet></router-outlet>
   </div>
-  <div>
-    <p>Form đăng ký thông tin giảng viên</p>
-    <form action="">
-      <div class="form-group">
-        <label for="">Tên GV</label>
-        <input
-          type="text"
-          class="form-control"
-          (input)="onInput($event, 'name')"
-          [value]="inputValues.name"
-        >
-      </div>
-      <div class="form-group">
-        <label for="">Tuổi GV</label>
-        <input
-          type="number"
-          class="form-control"
-          (input)="onInput($event, 'age')"
-          [value]="inputValues.age"
-        >
-      </div>
-      <div class="form-group">
-        <label for="">Ảnh GV</label>
-        <input
-          type="text"
-          class="form-control"
-          (input)="onInput($event, 'avatar')"
-          [value]="inputValues.avatar"
-        >
-      </div>
-      <div class="form-group">
-        <label for="">Giới tính GV</label>
-        <input
-          type="radio"
-          class="form-check"
-          (input)="onInput($event, 'gender')"
-          [checked]="inputValues.gender === '1'"
-          [value]="1"
-        >Nam
-        <input
-          type="radio"
-          class="form-check"
-          (input)="onInput($event, 'gender')"
-          [checked]="inputValues.gender === '0'"
-          [value]="0"
-        >Nữ
-      </div>
-      <div>
-        <button type="button" (click)="onSubmit()" class="btn btn-success">
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-  <!--
-    Cách 1: sử dụng ngIf
-    Cách 2: sử dụng class
-   -->
-  <div>
-    <button
-      class="btn btn-info"
-      (click)="changeTableStatus()"
-    >{{showStatus ? 'Ẩn' : 'Hiện'}} bảng teacher</button>
-      <app-table [users]="teachers"
-      *ngIf="showStatus"
-      class="{{showStatus ? 'display-block' : 'display-none'}}"
-      ></app-table>
-  </div>
-
-  <div>
-    <!--
-      B1: gọi component con <app-name></app-name>
-      B2: định nghĩa việc truyền và nhận dữ liệu tĩnh <app-name name="1234"></app-name>
-      B3: truyền dữ liệu động <app-name [name]="studentName"></app-name>
-     -->
-    Tên sv: <app-name [name]="studentName"></app-name>
-    MSV: <app-identity [id]="studentId"></app-identity>
-  </div>
-</div>
