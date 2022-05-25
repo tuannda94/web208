@@ -12,6 +12,9 @@ import { FormComponent } from './form/form.component';
 // Import thư viện này để sử dụng Form
 import { FormsModule } from '@angular/forms';
 import { ShowValidateComponent } from './components/show-validate/show-validate.component';
+import { UserComponent } from './user/user.component';
+import { ListComponent } from './user/list/list.component';
+import { UserFormComponent } from './user/form/form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ShowValidateComponent } from './components/show-validate/show-validate.
     IdentityComponent,
     TableAvatarComponent,
     FormComponent,
-    ShowValidateComponent
+    ShowValidateComponent,
+    UserComponent,
+    ListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
