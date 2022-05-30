@@ -21,7 +21,12 @@ import { ProductDetailClientComponent } from './product-detail-client/product-de
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HomeClientComponent } from './home-client/home-client.component';
+import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
+import { AdminProductDetailComponent } from './pages/admin/admin-product/admin-product-detail/admin-product-detail.component';
+import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
 
+// Đây là module cung cấp các phương thức để component sử dụng gọi API
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,13 +45,17 @@ import { HomeClientComponent } from './home-client/home-client.component';
     ProductDetailClientComponent,
     ClientLayoutComponent,
     AdminLayoutComponent,
-    HomeClientComponent
+    HomeClientComponent,
+    AdminProductListComponent,
+    AdminProductDetailComponent,
+    AdminProductFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule // Đưa vào đây để FormComponent bên trên có thể dùng
+    FormsModule, // Đưa vào đây để FormComponent bên trên có thể dùng
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
