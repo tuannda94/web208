@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>
+        <a routerLink="/admin/products/{{product.id}}">Detail</a>
+        <!-- <a [routerLink]="['/admin', 'products', product.id]">
+          <button class="btn btn-info">Detail</button>
+        </a> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
