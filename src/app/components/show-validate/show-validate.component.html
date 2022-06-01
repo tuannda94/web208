@@ -8,6 +8,11 @@
   class="text-danger"
 >{{key}} phải từ {{field.errors?.['minlength'].requiredLength}} ký tự
 </span>
+<span
+  *ngIf="(field.dirty || field.touched) && field.errors?.['maxlength']"
+  class="text-danger"
+>{{key}} tối đa {{field.errors?.['maxlength'].requiredLength}} ký tự
+</span>
 <span class="text-danger"
   *ngIf="(field.dirty || field.touched) && field.errors?.['min']">
   {{key}} tối thiểu là {{field.errors?.['min'].min}}

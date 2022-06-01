@@ -10,7 +10,11 @@ import { NameComponent } from './name/name.component';
 import { IdentityComponent } from './identity/identity.component';
 import { TableAvatarComponent } from './table/table-avatar/table-avatar.component';
 import { FormComponent } from './form/form.component';
+
 import { FormsModule } from '@angular/forms';
+// ReactiveFormsModule
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { ShowValidateComponent } from './components/show-validate/show-validate.component';
 import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
@@ -48,7 +52,10 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+
     FormsModule, // FormsModule được sử dụng ở các component đã có bên trên
+    ReactiveFormsModule,
+
     HttpClientModule
   ],
   providers: [],

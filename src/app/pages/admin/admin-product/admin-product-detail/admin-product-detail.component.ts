@@ -28,6 +28,8 @@ export class AdminProductDetailComponent implements OnInit {
 
     this.productService.getProduct(idFromUrl).subscribe(data => {
       this.product = data;
+      // console.log(this.product);
+
     })
   }
 
