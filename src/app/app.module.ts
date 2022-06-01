@@ -11,6 +11,9 @@ import { TableAvatarComponent } from './table/table-avatar/table-avatar.componen
 import { FormComponent } from './form/form.component';
 // Import thư viện này để sử dụng Form
 import { FormsModule } from '@angular/forms';
+// Import thư viện ReactiveFormsModule
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { ShowValidateComponent } from './components/show-validate/show-validate.component';
 import { UserComponent } from './user/user.component';
 import { ListComponent } from './user/list/list.component';
@@ -55,6 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     FormsModule, // Đưa vào đây để FormComponent bên trên có thể dùng
+    ReactiveFormsModule, // Đưa vào để AdminProductForm sử dụng
     HttpClientModule
   ],
   providers: [],
