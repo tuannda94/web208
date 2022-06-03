@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {FormGroup, FormControl, Validators, AbstractControl, ValidationErrors} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductService } from '../../../../services/product.service';
 
@@ -21,12 +21,30 @@ export class AdminProductFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(32),
+        this.onValidateNameHasProduct // chỉ gọi lại tên của hàm validate
       ]), // FormControl(giá trị mặc định)
       // price: new FormControl(0)
     });
   }
 
   ngOnInit(): void {
+  }
+
+  // required (control: AbstractControl): ValidationErrors|null {
+  //   if (....) {
+  //     return {required: true};
+  //   }
+  //   return null;
+  // }
+
+  onValidateNameHasProduct (control: AbstractControl): ValidationErrors|null {
+    const inputValue = control.value;
+
+    if (!inputValue.includes('product')) {
+      return {hasProductError: true};
+    }
+
+    return null;
   }
 
   onSubmit() {

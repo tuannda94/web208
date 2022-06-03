@@ -25,3 +25,10 @@
   *ngIf="(field.dirty || field.touched) && field.errors?.['email']">
   {{key}} phải đúng định dạng
 </span>
+
+<!-- Custom validate -->
+<span
+  *ngIf="(field.dirty || field.touched) && field.errors?.['hasProductError']"
+  class="text-danger"
+>{{key}} phải chứa từ 'product'
+</span>
