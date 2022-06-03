@@ -2,23 +2,38 @@
   "products": [
     {
       "id": 5,
-      "name": "Iphone 14"
+      "name": "Iphone 14 update product",
+      "status": 1
     },
     {
       "id": 6,
-      "name": "Iphone 14"
+      "name": "Iphone 14",
+      "status": 1
     },
     {
       "id": 7,
-      "name": "Iphone 14"
+      "name": "Iphone 14",
+      "status": 0
     },
     {
       "name": "new product",
+      "status": 0,
       "id": 8
     },
     {
       "name": "product test create",
+      "status": 0,
       "id": 9
+    },
+    {
+      "name": "product Iphone 15",
+      "status": 0,
+      "id": 10
+    },
+    {
+      "name": "product Iphone 16 update",
+      "status": 1,
+      "id": 11
     }
   ]
 }
