@@ -35,5 +35,12 @@
       "status": 1,
       "id": 11
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "$2a$12$Sqf2F0VVU8X0/t62H.pW.e.AY3zXNSWjNspT8SSTu9dsCjLm8ODJO"
+    }
   ]
 }
