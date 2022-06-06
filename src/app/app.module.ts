@@ -30,6 +30,7 @@ import { AdminProductFormComponent } from './pages/admin/admin-product/admin-pro
 
 // Đây là module cung cấp các phương thức để component sử dụng gọi API
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/auth/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeClientComponent,
     AdminProductListComponent,
     AdminProductDetailComponent,
-    AdminProductFormComponent
+    AdminProductFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -20,5 +20,11 @@
       "name": "product Iphone 16",
       "id": 9
     }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$12$z4.hR2FL/e22LQ4b9ckVb.S8c6Qm6DEVztK1fMg/Z8wBiCzjc1a/G"
+    }
   ]
 }
