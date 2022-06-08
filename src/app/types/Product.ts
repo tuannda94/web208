@@ -6,3 +6,9 @@ export type Product = {
 export type ProductCreate = {
   name: string
 };
+
+export type ProductCart = {
+  id: number,
+  name: string,
+  value: number
+};
